@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import axios from 'axios';
-import Weather from './Weather';
+import Weather from '../Weather';
+import './SearchCity.css';
 
-const apiKey = ""
+const apiKey = "8636f5d0e1f01b4d199c28bacddfaa55"
 
 const SearchCity = () => {
     const [cityData, setCityData] = useState({});
@@ -23,10 +24,11 @@ const SearchCity = () => {
     }
     return (
         <>
-            <section>
-                <input type='text' value={city} placeholder='Search city' onChange={(event) => setCity(event.target.value)} onKeyDown={fetchCity}></input>
-            </section>
-            <Weather weatherData={cityData} />
+            <main class="weather-card">
+                <h1 class="weather-card__title">Weather search</h1>
+                <input class="weather-card__input" type='text' value={city} placeholder='Enter city' onChange={(event) => setCity(event.target.value)} onKeyDown={fetchCity} />
+                <Weather weatherData={cityData} />
+            </main>
         </>
     );
 }
