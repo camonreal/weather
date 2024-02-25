@@ -1,4 +1,4 @@
-const ForecastData = ({forecastData}) => {
+const Forecast = ({forecastData}) => {
     return (
         <div>
             <p>teste componente novo</p>
@@ -6,4 +6,4 @@ const ForecastData = ({forecastData}) => {
     );
 }
 
-export default ForecastData;
+export default Forecast;

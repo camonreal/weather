@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import axios from 'axios';
-import Weather from '../Weather';
-import './SearchCity.css';
-import ForecastData from '../ForecastData';
+import './Search.css';
+import Weather from '../Weather/Weather';
+import Forecast from '../Forecast/Forecast';
 
 const apiKey = "8636f5d0e1f01b4d199c28bacddfaa55"
 
-const SearchCity = () => {
+const Search = () => {
     const [cityData, setCityData] = useState({});
     const [forecastData, setForecastData] = useState([]);
     const [city, setCity] = useState("")
@@ -31,7 +31,7 @@ const SearchCity = () => {
             setCity("")
         }
     }
-    
+
     const fetchForecastData = async (lat, lon) => {
         //Open Mateo Weather | Forecast - API
         //const urlForecast = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&hourly=temperature_2m`
@@ -51,13 +51,13 @@ const SearchCity = () => {
 
     return (
         <>
-            <main class="weather-card">
-                <h1 class="weather-card__title">Weather search</h1>
-                <input class="weather-card__input" type='text' value={city} placeholder='Enter city' onChange={(event) => setCity(event.target.value)} onKeyDown={fetchCity} />
+            <main className="weather-card">
+                <h1 className="weather-card__title">Weather search</h1>
+                <input className="weather-card__input" type='text' value={city} placeholder='Enter city' onChange={(event) => setCity(event.target.value)} onKeyDown={fetchCity} />
                 <Weather weatherData={cityData} />
-                <ForecastData forecastData={forecastData} />
+                <Forecast forecastData={forecastData} />
             </main>
         </>
     );
 }
-export default SearchCity;
+export default Search;

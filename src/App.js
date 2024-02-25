@@ -1,16 +1,16 @@
 import { PrimeReactProvider } from 'primereact/api';
 import 'primereact/resources/themes/bootstrap4-light-purple/theme.css';
-import SearchCity from "./components/SearchCity/SearchCity";
+import Search from "./components/Search/Search";
 
 function App() {
   return (
     <>
-    <header></header>
-    <main>
-      <PrimeReactProvider>
-        <SearchCity />
-      </PrimeReactProvider>
-    </main>
+      <header></header>
+      <main>
+        <PrimeReactProvider>
+          <Search />
+        </PrimeReactProvider>
+      </main>
     </>
   );
 }
