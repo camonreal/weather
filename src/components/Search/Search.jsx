@@ -55,8 +55,8 @@ const Search = () => {
                 <h1 className="weather-card__title">Weather search</h1>
                 <input className="weather-card__input" type='text' value={city} placeholder='Enter city' onChange={(event) => setCity(event.target.value)} onKeyDown={fetchCity} />
                 <Weather weatherData={cityData} />
-                <Forecast forecastData={forecastData} />
             </main>
+            <Forecast forecastData={forecastData} />
         </>
     );
 }
