@@ -3,6 +3,7 @@ import axios from 'axios';
 import './WeatherAPI.css';
 import Weather from '../../components/Weather/Weather';
 import Forecast from '../../components/Forecast/Forecast';
+import Swal from 'sweetalert2';
 
 const apiKey = "8636f5d0e1f01b4d199c28bacddfaa55"
 
@@ -31,6 +32,7 @@ const WeatherAPI = () => {
                 const response = await axios.get(urlWeatherMap);
                 const data = response.data;
                 setCityData(data);
+                Swal.fire("Searching for forecast for the chosen city.");
 
                 //LocalStorage
                 localStorage.setItem('lastSearchedCity', city);
@@ -46,11 +48,14 @@ const WeatherAPI = () => {
 
                 const lat = data.coord.lat;
                 const lon = data.coord.lon;
-                console.log(lat);
-                console.log(lon);
+                
                 await fetchForecastData(lat, lon);
             } catch (error) {
-                console.log(error);
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: "Error fetching city. OR It seems like the API is down at the moment. Please try again."
+                  });
             }
             setCity("")
         }
@@ -59,13 +64,20 @@ const WeatherAPI = () => {
     const fetchForecastData = async (lat, lon) => {
         const urlForecast = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}`;
         try {
-            console.log('entrou no forecast')
             const forecastResponse = await axios.get(urlForecast);
             const forecastData = forecastResponse.data;
             setForecastData(forecastData.list);
-            console.log(forecastData)
+            Swal.fire({
+                title: "Works!",
+                text: "We found the forecast for the chosen city",
+                icon: "success"
+              });
         } catch (error) {
-            console.log(error);
+            Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Error fetching forecast. OR It seems like the API is down at the moment. Please try again."
+        });
         }
     }
 

@@ -21,7 +21,7 @@ const Weather = ({ weatherData }) => {
                     <li className="weather-info__item weather-temperature"><p> Min. {weatherData.main.temp_min.toFixed()} °C <br></br> Max. {weatherData.main.temp_max.toFixed()} °C</p></li>
                     <li className="weather-info__item weather-pressure"><p>Pressure {weatherData.main.pressure.toFixed()} hPa<br></br>  Humidity {weatherData.main.humidity.toFixed()} %</p></li>
                 </ul>
-            ) : null}
+            ) : (null)}
         </>
     );
 }
