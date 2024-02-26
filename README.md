@@ -14,13 +14,13 @@ To run the project locally on your machine, follow these simple steps:
 1. Clone the GitHub repository to your local machine using the following command:
 
 ```bash
-git clone https://github.com/your-username/your-repository.git
+git clone https://github.com/c4m1l4m00n/weather.git
 ```
 
 2. Navigate to the project directory using the terminal:
 
 ```bash
-cd nome-do-repositorio
+cd weather
 ```
 
 3. Install the project dependencies by running the following command:
