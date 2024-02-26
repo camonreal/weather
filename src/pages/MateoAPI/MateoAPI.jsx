@@ -1,23 +1,23 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import '../WeatherAPI/WeatherAPI.css';
-import './MateoAPI.css'
+import './MateoAPI.css';
 import ForecastMateo from '../../components/ForecastMateo/ForecastMateo';
 import Weather from '../../components/Weather/Weather';
 import Swal from 'sweetalert2';
 
-const apiKey = "8636f5d0e1f01b4d199c28bacddfaa55"
+const apiKey = "8636f5d0e1f01b4d199c28bacddfaa55";
 
 const MateoAPI = () => {
   const [cityData, setCityData] = useState({});
   const [forecastData, setForecastData] = useState([]);
-  const [city, setCity] = useState("")
+  const [city, setCity] = useState("");
   const [loading, setLoading] = useState(true);
   const [dataStorage, setdataStorage] = useState(null);
 
   useEffect(() => {
     const lastSearchedCity = localStorage.getItem('lastSearchedCity');
-    setCity(lastSearchedCity)
+    setCity(lastSearchedCity);
 
     const cities = localStorage.getItem('cities');
     if (cities) {
@@ -58,7 +58,7 @@ const MateoAPI = () => {
           text: "Error fetching city. OR It seems like the API is down at the moment. Please try again."
         });
       }
-      setCity("")
+      setCity("");
     }
   }
 

@@ -5,18 +5,18 @@ import Weather from '../../components/Weather/Weather';
 import Forecast from '../../components/Forecast/Forecast';
 import Swal from 'sweetalert2';
 
-const apiKey = "8636f5d0e1f01b4d199c28bacddfaa55"
+const apiKey = "8636f5d0e1f01b4d199c28bacddfaa55";
 
 const WeatherAPI = () => {
     const [cityData, setCityData] = useState({});
     const [forecastData, setForecastData] = useState([]);
-    const [city, setCity] = useState("")
+    const [city, setCity] = useState("");
     const [dataStorage, setdataStorage] = useState(null);
 
 
     useEffect(() => {
         const lastSearchedCity = localStorage.getItem('lastSearchedCity');
-        setCity(lastSearchedCity)
+        setCity(lastSearchedCity);
 
         const cities = localStorage.getItem('cities');
         if (cities) {
@@ -48,16 +48,16 @@ const WeatherAPI = () => {
 
                 const lat = data.coord.lat;
                 const lon = data.coord.lon;
-                
+
                 await fetchForecastData(lat, lon);
             } catch (error) {
                 Swal.fire({
                     icon: "error",
                     title: "Oops...",
                     text: "Error fetching city. OR It seems like the API is down at the moment. Please try again."
-                  });
+                });
             }
-            setCity("")
+            setCity("");
         }
     }
 
@@ -71,13 +71,13 @@ const WeatherAPI = () => {
                 title: "Works!",
                 text: "We found the forecast for the chosen city",
                 icon: "success"
-              });
+            });
         } catch (error) {
             Swal.fire({
-          icon: "error",
-          title: "Oops...",
-          text: "Error fetching forecast. OR It seems like the API is down at the moment. Please try again."
-        });
+                icon: "error",
+                title: "Oops...",
+                text: "Error fetching forecast. OR It seems like the API is down at the moment. Please try again."
+            });
         }
     }
 
