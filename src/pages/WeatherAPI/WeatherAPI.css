@@ -1,0 +1,64 @@
+.weather-card {
+  width: 300px;
+  padding: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  background-color: rgba(0, 0, 0, 0.5);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(10px);
+  margin: 20px auto;
+  height: 600px;
+  font-family: 'Nunito', sans-serif;
+  color: #f1f1f1;
+}
+
+.weather-card__title {
+  color: #f1f1f1;
+  text-align: center;
+}
+
+.weather-card__input {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.8);
+  transition: border-color 0.3s;
+  font-family: 'Nunito', sans-serif;
+  color: #333;
+}
+
+.weather-card__input:focus {
+  border-color: #333;
+}
+
+.containerStore {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cityStore {
+  margin-right: 10px;
+  margin-bottom: 10px;
+  padding: 5px 10px;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  color: #333;
+}
+
+.cities-card {
+  width: 300px;
+  padding: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  background-color: rgba(0, 0, 0, 0.5);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(10px);
+  margin: 20px auto;
+  height: 200px;
+  font-family: 'Nunito', sans-serif;
+  color: #f1f1f1;
+}

@@ -1,0 +1,26 @@
+.forecast-container_mateo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.forecast-card_mateo {
+    width: calc(16% - 5px);
+    margin-right: 10px;
+    margin-bottom: 20px;
+    background-color: rgba(0, 30, 0, 0.5);
+    backdrop-filter: blur(10px);
+    border-radius: 5px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+}
+
+.forecast-card_mateo li {
+    margin: 5px 0;
+    text-align: center;
+    color: #f1f1f1;
+}

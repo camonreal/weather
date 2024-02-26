@@ -1,0 +1,12 @@
+.weather-card_mateo {
+    background-color: rgba(0, 30, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    width: 300px;
+    padding: 20px;
+    border-radius: 8px;
+    backdrop-filter: blur(10px);
+    margin: 20px auto;
+    height: 600px;
+    font-family: 'Nunito', sans-serif;
+    color: #f1f1f1;
+}
